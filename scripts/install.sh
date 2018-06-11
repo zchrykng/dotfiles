@@ -1,5 +1,11 @@
 #! /bin/bash
 
+mkdir ~/.tmp
+
+curl https://raw.githubusercontent.com/zchrykng/dotfiles/master/zsh/env.zsh > ~/.tmp/env.zsh
+
+source ~/.tmp/env.zsh
+
 # install brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -16,9 +22,9 @@ git lfs install --system
 
 
 # setup dotfile repo
-mkdir -p ~/.config/dotfiles
+mkdir -p $DOTFILES
 
-git clone https://github.com/zchrykng/dotfiles ~/.config/dotfiles
+git clone https://github.com/zchrykng/dotfiles $DOTFILES
 
 
 
