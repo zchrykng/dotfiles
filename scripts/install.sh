@@ -5,6 +5,8 @@ curl https://raw.githubusercontent.com/zchrykng/dotfiles/master/zsh/env.zsh > $H
 source $HOME/.tmp/env.zsh
 
 if [[ "${OS}" == "mac" ]]; then
+	xcode-select --install
+
 	# install brew
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
