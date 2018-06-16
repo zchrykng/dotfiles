@@ -1,5 +1,3 @@
-#! /bin/bash
-
 mkdir $HOME/.tmp
 
 curl https://raw.githubusercontent.com/zchrykng/dotfiles/master/zsh/env.zsh > $HOME/.tmp/env.zsh
@@ -18,15 +16,15 @@ if [[ "${OS}" == "mac" ]]; then
 	brew install node r ack git-flow-avh git-lfs go ctags editorconfig cloc gotags hub 
 
 elif [[ "${OS}" == "debian" ]]; then
-	sudo apt install git ffmpeg node r ack git-flow-avh git-lfs go ctags editorconfig cloc hub
+	sudo apt install git ffmpeg node r ack git-flow-avh git-lfs go ctags editorconfig cloc hub zsh
 
 elif [[ "${OS}" == "fedora" ]]; then
-	sudo dnf install git ffmpeg node r ack git-flow-avh git-lfs go ctags editorconfig cloc hub
+	sudo dnf install git ffmpeg node r ack git-flow-avh git-lfs go ctags editorconfig cloc hub zsh
 fi
 
 # finish setting up installed utilities
-sudo git lfs install
-sudo git lfs install --system
+git lfs install
+git lfs install --system
 
 # setup dotfile repo
 mkdir -p $DOTFILES
@@ -39,5 +37,11 @@ ln -s "$(DOTFILES)/vimrc.vim" ~/.vimrc
 
 curl -L git.io/antigen > $ZSHFILES/antigen.zsh
 
+
+if [[ "${OS}" == "mac" ]]; then
+	sudo chsh -s /usr/local/bin/zsh $USER
+elif [[ "${OS}" == "debian" || "${OS}" == "fedora" ]]; then
+	sudo chsh -s /usr/bin/zsh $USER
+fi
 
 rm -r $HOME/.tmp
