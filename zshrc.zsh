@@ -1,9 +1,5 @@
-source ~/.config/antigen.zsh
-
-export GOPATH=~/Go
-export PATH=$GOPATH/bin:$HOME/.local/bin:$PATH
-
-
+source $HOME/.config/dotfiles/zsh/env.zsh
+source $ZSHFILES/antigen.zsh
 
 alias cg="g++ -O2 -std=c++14 -lm"
 
