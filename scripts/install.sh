@@ -26,15 +26,16 @@ fi
 
 # finish setting up installed utilities
 git lfs install
-git lfs install --system
+sudo git lfs install --system
 
 # setup dotfile repo
 mkdir -p $DOTFILES
+mkdir -p $ZSHFILES
 
 git clone https://github.com/zchrykng/dotfiles $DOTFILES
 
-ln -s "$(DOTFILES)/zshrc.zsh" ~/.zshrc
-ln -s "$(DOTFILES)/vimrc.vim" ~/.vimrc
+ln -s "$DOTFILES/zshrc.zsh" ~/.zshrc
+ln -s "$DOTFILES/vimrc.vim" ~/.vimrc
 
 
 curl -L git.io/antigen > $ZSHFILES/antigen.zsh
