@@ -32,7 +32,7 @@ sudo git lfs install --system
 mkdir -p $DOTFILES
 mkdir -p $ZSHFILES
 
-git clone https://github.com/zchrykng/dotfiles $DOTFILES
+git clone git@github.com:zchrykng/dotfiles $DOTFILES
 
 ln -s "$DOTFILES/zshrc.zsh" ~/.zshrc
 ln -s "$DOTFILES/vimrc.vim" ~/.vimrc
