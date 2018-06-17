@@ -14,7 +14,6 @@ if &compatible
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'Shougo/deoplete.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
@@ -22,6 +21,9 @@ Plug 'ternjs/tern_for_vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jmcantrell/vim-virtualenv'
 call plug#end()
+
+" Some basic setup
+set number
 
 " Airline setup
 let g:airline#extensions#tabline#enable = 1
@@ -34,9 +36,6 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <F3> :NERDTreeToggle<CR>
-
-" deoplete.nvim setup
-let g:deoplete#enable_at_startup = 1
 
 " Tagbar CTAGS
 let g:tagbar_type_go = {

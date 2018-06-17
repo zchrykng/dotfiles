@@ -42,7 +42,7 @@ curl -L git.io/antigen > $ZSHFILES/antigen.zsh
 
 
 if [[ "${OS}" == "mac" ]]; then
-	sudo chsh -s /usr/local/bin/zsh $USER
+	sudo chsh -s /bin/zsh $USER
 elif [[ "${OS}" == "debian" || "${OS}" == "fedora" ]]; then
 	sudo chsh -s /usr/bin/zsh $USER
 fi
