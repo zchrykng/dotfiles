@@ -14,8 +14,12 @@ antigen bundle command-line-found
 # Syntax highlighting bundle
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+
+
 # Load the theme
-antigen theme https://gitlab.com/zchrykng/zsh-themes.git zchrykng
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
+# antigen theme https://gitlab.com/zchrykng/zsh-themes.git zchrykng
 
 # Apply antigen config
 antigen apply
