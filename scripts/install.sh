@@ -18,7 +18,7 @@ if [[ "${OS}" == "mac" ]]; then
 	brew install node r ack git-flow-avh git-lfs go ctags editorconfig cloc gotags hub 
 
 elif [[ "${OS}" == "debian" ]]; then
-	sudo apt install git ffmpeg node r ack git-flow-avh git-lfs go ctags editorconfig cloc hub zsh
+	sudo apt install git ffmpeg nodejs r ack git-flow git-lfs golang exuberant-ctags editorconfig cloc zsh
 
 elif [[ "${OS}" == "fedora" ]]; then
 	sudo dnf install git ffmpeg node r ack git-flow-avh git-lfs go ctags editorconfig cloc hub zsh
