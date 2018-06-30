@@ -15,7 +15,7 @@ if [[ "${OS}" == "mac" ]]; then
 	brew install ffmpeg --with-x265 --with-webp
 
 	# brew installs that don't require options
-	brew install node r ack git-flow-avh git-lfs go ctags editorconfig cloc gotags hub 
+	brew install node r ack git-flow-avh git-lfs go ctags editorconfig cloc gotags hub
 
 elif [[ "${OS}" == "debian" ]]; then
 	sudo apt install git ffmpeg nodejs r ack git-flow git-lfs golang exuberant-ctags editorconfig cloc zsh
@@ -24,9 +24,6 @@ elif [[ "${OS}" == "fedora" ]]; then
 	sudo dnf install git ffmpeg node r ack git-flow-avh git-lfs go ctags editorconfig cloc hub zsh
 fi
 
-# finish setting up installed utilities
-git lfs install
-sudo git lfs install --system
 
 # setup dotfile repo
 mkdir -p $DOTFILES
