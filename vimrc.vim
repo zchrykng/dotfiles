@@ -25,23 +25,36 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'HerringtonDarkholme/yats.vim'
 
-" nvim specific plugins
-Plug 'Shougo/deoplete.nvim', Cond(has('nvim'), { 'do': ':UpdateRemotePlugins' })
-Plug 'zchee/deoplete-go', Cond(has('nvim'), { 'do': 'make'})
-Plug 'wokalski/autocomplete-flow', Cond(has('nvim'))
-Plug 'Shougo/neosnippet', Cond(has('nvim'))
-Plug 'Shougo/neosnippet-snippets', Cond(has('nvim'))
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
-" gvim/mvim specific plugins
 
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'wokalski/autocomplete-flow'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 
 call plug#end()
+
+if has('nvim')
+  let g:python_host_prog  = '/usr/local/bin/python2'
+  let g:python3_host_prog = '/usr/local/bin/python3'
+endif
 
 " Some basic setup
 set number
 
 " Airline setup
 let g:airline#extensions#tabline#enable = 1
+
+" deoplete setup
+let g:deoplete#enable_at_startup = 1
+
 
 " Tagbar setup
 nmap <F4> :TagbarToggle<CR>

@@ -1,6 +1,10 @@
 source $HOME/.config/dotfiles/zsh/env.zsh
 source $ZSHFILES/antigen.zsh
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 alias cg="g++ -O2 -std=c++14 -lm"
 
 # Load the oh-my-zsh library
@@ -17,9 +21,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 
 # Load the theme
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
-# antigen theme https://gitlab.com/zchrykng/zsh-themes.git zchrykng
+antigen theme https://gitlab.com/zchrykng/zsh-themes.git zchrykng
 
 # Apply antigen config
 antigen apply
