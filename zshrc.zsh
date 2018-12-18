@@ -7,6 +7,8 @@ fi
 
 alias cg="g++ -O2 -std=c++14 -lm"
 
+alias t=todo.sh
+
 # Load the oh-my-zsh library
 antigen use oh-my-zsh
 

@@ -57,16 +57,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 map <F3> :NERDTreeToggle<CR>
 
 " deoplete setup
-let g:deoplete#sources = {}
-let g:deoplete#sources.gitcommit=['github']
-
-let g:deoplete#keyword_patterns = {}
-let g:deoplete#keyword_patterns.gitcommit = '.+'
-
-call deoplete#util#set_pattern(
-  \ g:deoplete#omni#input_patterns,
-  \ 'gitcommit', [g:deoplete#keyword_patterns.gitcommit])
-
+let g:deoplete#enable_at_startup = 1
 
 " Tagbar CTAGS
 let g:tagbar_type_go = {
