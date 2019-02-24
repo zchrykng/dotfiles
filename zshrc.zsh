@@ -6,12 +6,14 @@ if type brew &>/dev/null; then
 fi
 
 alias cg="g++ -O2 -std=c++14 -lm"
-
 alias t=todo.sh
 
-export GPG_TTY=$(tty)
-export SSH_AUTH_SOCK_OLD=$SSH_AUTH_SOCK
-export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
+#export GPG_TTY=$(tty)
+#export SSH_AUTH_SOCK_OLD=$SSH_AUTH_SOCK
+#export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
+export EDITOR=nvim
+
+export PATH=~/.composer/vendor/bin:$PATH
 
 # Load the oh-my-zsh library
 antigen use oh-my-zsh
