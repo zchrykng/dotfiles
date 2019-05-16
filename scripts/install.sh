@@ -29,6 +29,7 @@ inputfile="$DOTFILES/links/main.csv"
 OLDIFS="$IFS"
 IFS=","
 while read NAME VALUES ; do
+	eval "rm \"~/${VALUES[0]}\" "
 	eval "ln -s \"$DOTFILES/$NAME\" \"~/${VALUES[0]}\" "
 done < "$inputfile"
 IFS="$OLDIFS"
@@ -38,6 +39,7 @@ if [[ "${OS}" == "mac" ]]; then
 	OLDIFS="$IFS"
 	IFS=","
 	while read NAME VALUES ; do
+		eval "rm \"~/${VALUES[0]}\" "
 		eval "ln -s \"$DOTFILES/$NAME\" \"~/${VALUES[0]}\" "
 	done < "$inputfile"
 	IFS="$OLDIFS"
