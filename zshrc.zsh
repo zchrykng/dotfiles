@@ -1,4 +1,3 @@
-source $HOME/.config/dotfiles/zsh/env.zsh
 source $ZSHFILES/antigen.zsh
 
 if type brew &>/dev/null; then

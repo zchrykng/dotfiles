@@ -1,0 +1,5 @@
+[
+	{ "src": "zshrc.zsh", "dest": ".zshrc" },
+	{ "src": "vimrc.vim", "dest": ".vimrc" },
+	{ "src": "Brewfile", "dest": ".Brewfile", "os": "mac" }
+]

@@ -1,0 +1,131 @@
+{
+    "links": [
+    	{ "src": [ "zshrc.zsh" ], "dest": [ ".zshrc" ] },
+        { "src": [ "zshenv.zsh" ], "dest": [ ".zshenv" ] },
+        { "src": [ "vimrc.vim" ], "dest": [ ".vimrc" ] },
+        { "src": [ "Brewfile" ], "dest": [ ".Brewfile" ], "os": "mac" }
+    ],
+    "packages": [
+        {
+            "name": "git",
+            "mapping": {
+                "mac": "git",
+                "fedora": "git",
+                "debian": "git",
+                "arch": ""
+            }
+        },
+        {
+            "name": "ffmpeg",
+            "mapping": {
+                "mac": "ffmpeg",
+                "fedora": "ffmpeg",
+                "debian": "ffmpeg",
+                "arch": ""
+            }
+        },
+        {
+            "name": "nodejs",
+            "mapping": {
+                "mac": "node",
+                "fedora": "node",
+                "debian": "nodejs",
+                "arch": ""
+            }
+        },
+        {
+            "name": "r",
+            "mapping": {
+                "mac": "r",
+                "fedora": "r",
+                "debian": "r",
+                "arch": ""
+            }
+        },
+        {
+            "name": "ack",
+            "mapping": {
+                "mac": "ack",
+                "fedora": "ack",
+                "debian": "ack",
+                "arch": ""
+            }
+        },
+        {
+            "name": "git-flow",
+            "mapping": {
+                "mac": "git-flow-avh",
+                "fedora": "git-flow-avh",
+                "debian": "git-flow",
+                "arch": ""
+            }
+        },
+        {
+            "name": "golang",
+            "mapping": {
+                "mac": "go",
+                "fedora": "go",
+                "debian": "golang",
+                "arch": ""
+            }
+        },
+        {
+            "name": "gotags",
+            "mapping": {
+                "mac": "gotags",
+                "fedora": "",
+                "debian": "",
+                "arch": ""
+            }
+        },
+        {
+            "name": "exuberant-ctags",
+            "mapping": {
+                "mac": "ctags",
+                "fedora": "ctags",
+                "debian": "exuberant-ctags",
+                "arch": ""
+            }
+        },
+        {
+            "name": "editorconfig",
+            "mapping": {
+                "mac": "editorconfig",
+                "fedora": "editorconfig",
+                "debian": "editorconfig",
+                "arch": ""
+            }
+        },
+        {
+            "name": "cloc",
+            "mapping": {
+                "mac": "cloc",
+                "fedora": "cloc",
+                "debian": "cloc",
+                "arch": ""
+            }
+        },
+        {
+            "name": "hub",
+            "mapping": {
+                "mac": "hub",
+                "fedora": "hub",
+                "arch": ""
+            }
+        },
+        {
+            "name": "neovim",
+            "mapping": {
+                "mac": "neovim"
+            }
+        },
+        {
+            "name": "zsh",
+            "mapping": {
+                "fedora": "zsh",
+                "debian": "zsh",
+                "arch": ""
+            }
+        }
+    ]
+}
