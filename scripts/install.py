@@ -1,7 +1,7 @@
-#!/bin/env python
+#!/usr/bin/env python3
 
-from pathlib2 import Path
 from sys import platform
+import json
 import os
 
 
@@ -13,37 +13,51 @@ gopath = os.path.join(home, "Go")
 operatingsystem = "unknown"
 
 if platform == "linux" or platform == "linux2":
-    print "linux"
-    debcheck = Path("/etc/debian_version")
-    if debcheck.exists():
-        print "debian"
+    if os.path.isfile("/etc/debian_version"):
         operatingsystem = "debian"
-    fedcheck = Path("/etc/fedora-release")
-    if fedcheck.exists():
-        print "fedora"
+    if os.path.isfile("/etc/fedora-release"):
         operatingsystem = "fedora"
 elif platform == "darwin":
-    print "macOS"
     operatingsystem = "mac"
 elif platform == "win32":
-    print "windows"
     operatingsystem = "windows"
 
+with open(os.path.join(dotfiles, "config.json")) as configfile:
+    config = json.load(configfile)
+
+for link in config["links"]:
+    print("Linking:", os.path.join(home, *link["src"]), "to", os.path.join(home, *link["dest"]))
+    if "os" in link:
+        linked = False
+        if link["os"] != operatingsystem:
+            print("Skipping, requires", link["os"], "but current operating system is", operatingsystem)
+            continue
+
+    if os.path.exists(os.path.join(home, *link["dest"])):
+        print("Skipping, destination already exists")
+        continue
+    print("Linked")
+    # os.symlink(os.path.join(home, *link["src"]), os.path.join(home, *link["dest"]))
 
 
 
 
-my_file = Path("/path/to/file")
-if my_file.is_file():
-    # file exists
+for package in config["packages"]:
+    print("Installing package:", package["name"])
 
-if my_file.is_dir():
-    # directory exists
 
-if my_file.exists():
-    # path exists
 
-os.makedirs(path, mode)
+# my_file = Path("/path/to/file")
+# if my_file.is_file():
+#     # file exists
 
-os.symlink(src, dst)
+# if my_file.is_dir():
+#     # directory exists
+
+# if my_file.exists():
+#     # path exists
+
+# os.makedirs(path, mode)
+
+# os.symlink(src, dst)
 
