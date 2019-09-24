@@ -24,5 +24,5 @@ export DOTFILES=$CONFIGROOT/dotfiles
 export ZSHFILES=$CONFIGROOT/zsh
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$HOME/.local/bin:$PATH
-
+export ENVSET="yes"
 

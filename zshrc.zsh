@@ -9,6 +9,10 @@ disable log
 [ -r "/etc/zshrc_$TERM_PROGRAM" ] && . "/etc/zshrc_$TERM_PROGRAM"
 # --------- /macOS default config block ------------------
 
+if [[ $ENVSET != "yes" ]] then
+  source $HOME/.zshenv
+fi
+
 source $ZSHFILES/antigen.zsh
 
 if type brew &>/dev/null; then
